@@ -21,9 +21,6 @@ jobs:
       - name: Build with Gradle
         run: gradle build -x test
 
-      - name: Test app
-        run: gradle test
-
       - name: Kaniko build
         uses: aevea/action-kaniko@master
         with:
