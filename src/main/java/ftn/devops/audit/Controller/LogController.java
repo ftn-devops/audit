@@ -21,4 +21,14 @@ public class LogController {
     public ResponseEntity<List<Log>> getAllLogs(){
         return ResponseEntity.ok(logRepository.findAll());
     }
+    
+    @GetMapping("/test")
+    public ResponseEntity<String> testEndpoint(){
+        return ResponseEntity.ok("mladen kralj");
+    }
+    
+    @GetMapping("/test2")
+    public ResponseEntity<String> test2Endpoint(){
+        return ResponseEntity.ok("mladen kralj 123");
+    }
 }

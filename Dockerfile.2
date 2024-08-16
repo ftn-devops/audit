@@ -5,11 +5,15 @@ FROM gradle:7.5.1-jdk17 AS build
 WORKDIR /app
 
 # Copy the Gradle wrapper and other necessary files
-COPY . ./
+COPY gradlew .
+COPY gradle ./gradle
 
-RUN ls -l
+# Copy the project files to the container
+COPY build.gradle settings.gradle ./
+COPY src ./src
+
 # Execute the Gradle build command
-RUN gradle build -x test
+RUN ./gradlew build -x test
 
 # Use a new image to run the application
 FROM openjdk:17-oracle
