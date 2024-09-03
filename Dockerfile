@@ -7,7 +7,6 @@ WORKDIR /app
 # Copy the Gradle wrapper and other necessary files
 COPY . ./
 
-RUN ls -l
 # Execute the Gradle build command
 RUN gradle build -x test
 
