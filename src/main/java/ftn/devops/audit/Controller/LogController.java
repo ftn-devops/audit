@@ -2,6 +2,8 @@ package ftn.devops.audit.Controller;
 
 import ftn.devops.audit.Entity.Log;
 import ftn.devops.audit.Repository.LogRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +21,6 @@ public class LogController {
     @Autowired
     LogRepository logRepository;
 
-    @Autowired
-    private Tracer tracer;
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
     @Value("${spring.application.name}")
